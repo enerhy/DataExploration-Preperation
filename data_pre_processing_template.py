@@ -11,6 +11,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Importing the dataset
+# For an absolute path df = pd.read_csv(r'D:\Machine Learning\zero_to_deep_learning_video\data/titanic-train.csv')
+
 dataset = pd.read_csv('Data.csv')
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, 3].values
