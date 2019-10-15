@@ -102,6 +102,10 @@ df.plot(kind='hexbin', x='x', y='y', bins=100, cmap='rainbow')
 
 g = sns.pairplot(iris, hue="species")
 
+#or just 
+import seaborn as sns; sns.set(style="ticks", color_codes=True)
+sns.pairplot(data, hue="the name of the column")
+
 
 
 
