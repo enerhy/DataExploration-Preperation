@@ -1,4 +1,4 @@
-# # Visual Data Exploration with Matplotlib
+# # Visual Data Exploration with Matplotlib and DATAFRAMES
 
 import numpy as np
 import pandas as pd
