@@ -150,6 +150,9 @@ scaler.fit_tramsform(data.ColumnName.values.reshape(-1,1))
 
 
 
-
+-------Display in Jupyter-----------
+#Changing the number of items displayed
+pd.set_option('display.max_rows', 100)
+pd.set_option('display.max_columns', 100)
 
 
