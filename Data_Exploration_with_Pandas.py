@@ -6,6 +6,10 @@ import numpy as np
 
 df = pd.read_csv(r'D:\Machine Learning\zero_to_deep_learning_video\data/titanic-train.csv')
 
+df.head()
+df.describe()
+df.isnull().any() / df.shape()
+
 #Indexing
 row3 = df.iloc[3] #calls rows or columns by index
 df.loc[0:4, 'Ticket'] #calls rows or columns by column name
@@ -26,7 +30,10 @@ print(cond8)
 
 #Aggregation
 ag1 = df['Survived'].value_counts() #aggregates for the values
+ag1 = df['Survived'].value_counts().plot(kind = 'bar')
+
 ag2 = df['Pclass'].value_counts()
+# if we want the percentage: df.Pclass.value_counts() / df.Pclass.notnull().sum()
 ag3 = df.groupby(['Pclass', 'Survived'])['PassengerId'].count() #Group By
 
 df['Age'].min()
