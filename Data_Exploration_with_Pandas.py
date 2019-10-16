@@ -131,6 +131,11 @@ data.ColumnName = data.ColumnName.apply(lambda x: x.lower())
 #To float
 data.ColumnName = data.ColumnName.apply(lambda x: x(str).lower.().replace('the string to replace', '').strip())
 
+#This worked
+train.target = train.target.str.replace('class_', '')
+train.target = train.target = train.target.astype(int)
+
+
 # Outliers
 data.boxplot('ColumnName')
 data.hist('ColumnName')
