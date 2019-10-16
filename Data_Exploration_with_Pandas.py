@@ -5,6 +5,8 @@ import pandas as pd
 import numpy as np
 
 df = pd.read_csv(r'D:\Machine Learning\zero_to_deep_learning_video\data/titanic-train.csv')
+#shuffling the data
+np.random.shuffle(df)
 
 df.head()
 df.columns
