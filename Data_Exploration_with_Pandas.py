@@ -9,6 +9,7 @@ df = pd.read_csv(r'D:\Machine Learning\zero_to_deep_learning_video\data/titanic-
 df.head()
 df.columns
 df.describe()
+df.dtypes
 df.isnull().any() / df.shape()
 df.isnull().sum() #shows how many are the emty cells
 df.isnull().sum() / df.shape[0]
@@ -100,8 +101,47 @@ sns.pairplot(df, hue='class') #hue - the feature/ column name
 
 
 
--------------------
+
+
+--------DATA CLEANING-----------
 df.drop_duplicates(inplace=True)
+
+#Drop columns with too many emty cells
+thresh = len(data)*.6
+data.dropna(thresh=thresh, axis =1, inplace = True)
+
+#Drop rows
+data.dropna(thresh=somenumber, axis = 0, inplace = True)
+
+#Replace null values 
+data.ColumnName.replacena(data.ColumnName.median())
+
+
+
+-------------------STRINGS
+#converting all values to strings
+data.ColumnName.astype(str)
+
+#lower all Characters
+data.ColumnName = data.ColumnName.apply(lambda x: x.lower()) 
+
+
+#To float
+data.ColumnName = data.ColumnName.apply(lambda x: x(str).lower.().replace('the string to replace', '').strip())
+
+# Outliers
+data.boxplot('ColumnName')
+data.hist('ColumnName')
+from scipy import stats
+data_outliers = data[(data.ColumnName < data.ColumnName.quantile(.995)) & (data.ColumnName > data.ColumnName.quantile(.005))]
+
+
+#Scalling Columns
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler()
+scaler.fit_tramsform(data.ColumnName.values.reshape(-1,1))
+
+
 
 
 
