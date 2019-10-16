@@ -7,8 +7,11 @@ import numpy as np
 df = pd.read_csv(r'D:\Machine Learning\zero_to_deep_learning_video\data/titanic-train.csv')
 
 df.head()
+df.columns
 df.describe()
 df.isnull().any() / df.shape()
+df.isnull().sum() #shows how many are the emty cells
+df.isnull().sum() / df.shape[0]
 
 #Indexing
 row3 = df.iloc[3] #calls rows or columns by index
@@ -97,7 +100,8 @@ sns.pairplot(df, hue='class') #hue - the feature/ column name
 
 
 
-
+-------------------
+df.drop_duplicates(inplace=True)
 
 
 
