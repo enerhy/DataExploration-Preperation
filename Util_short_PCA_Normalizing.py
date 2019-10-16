@@ -69,3 +69,16 @@ def plot_cumulative_variance(pca):
     plt.show()
     return P
 
+
+
+def y2indicator(y):
+    N = len(y)
+    y = y.astype(np.int32)
+    ind = np.zeros((N, 10))
+    for i in range(N):
+        ind[i, y[i]] = 1
+    return ind
+
+
+
+
