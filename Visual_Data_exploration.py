@@ -108,8 +108,17 @@ sns.pairplot(data, hue="the name of the column")
 
 
 
+-----  counting of label over categories ----
+sns.set()
+
+sns.factorplot(x='Survived', col='Sex', kind='count', data=df_train);
 
 
+---- Histogram of a feature incl. binary classification -----
+df.groupby('Survived').Fare.hist(alpha=0.6);
+
+---- a Swarmplot of a feature and the binary classification -----
+sns.swarmplot(x='Survived', y='Fare', data=df);
 
 
 
