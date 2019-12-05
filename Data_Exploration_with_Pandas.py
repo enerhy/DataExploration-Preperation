@@ -71,6 +71,10 @@ pivot = df.pivot_table(index='Pclass',
                        aggfunc='count')
 pivot = pivot.reset_index()
 
+#Pivot into a DataFrame
+data.groupby(['issue_dt', 'grade'])['loan_amnt'].sum().unstack()
+
+
 #Sorting
 df.sort_values('Age', ascending = False).head
 
