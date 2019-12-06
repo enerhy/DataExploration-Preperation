@@ -74,6 +74,10 @@ pivot = pivot.reset_index()
 #Pivot into a DataFrame
 data.groupby(['issue_dt', 'grade'])['loan_amnt'].sum().unstack()
 
+# Pivot Indexes into a list
+ordered_labels = X_train.groupby(['Neighborhood'
+                                  ])['SalePrice'].mean().sort_values().index
+
 
 #Sorting
 df.sort_values('Age', ascending = False).head
